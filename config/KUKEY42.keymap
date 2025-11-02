@@ -56,7 +56,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_NUM_HENKAN";
             bindings = <&mo>, <&td_henkan>;
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
@@ -97,7 +97,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP_BRACKET_OS";
             bindings = <&kp>, <&bracket_left>;
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
@@ -106,7 +106,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP_PAREN_CTRL";
             bindings = <&kp>, <&paren_left>;
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
@@ -133,7 +133,7 @@
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
     &kp Z                &kp X                &kp C                &kp V                &kp B                &td_esc_bt                &kp BACKSPACE        &kp N                &kp M                &kp COMMA            &kp DOT              &kp SLASH
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-    &ht_paren_ctrl LCTRL &ht_bracket_os LGUI  &kp LEFT_ALT         &kp N0               &lt FN_SCROLL ENTER  &kp LCLK                  &lt_num_henkan NUM   &mt LSHIFT SPACE                                                                    &semicolon_colon
+    &ht_paren_ctrl LCTRL 0 &ht_bracket_os LGUI 0 &kp LEFT_ALT         &kp N0               &lt FN_SCROLL ENTER  &kp LCLK                  &lt_num_henkan NUM 0 &mt LSHIFT SPACE                                                                    &semicolon_colon
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
             >;
 
