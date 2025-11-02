@@ -4,6 +4,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include "japanese_keymap.h"
 
 #define NUM 1
 #define FN_SCROLL 2
@@ -21,14 +22,14 @@
         paren_left: paren_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(N8) &kp LS(N9) &kp LEFT>;
+            bindings = <&kp JP_LPRN &kp JP_RPRN &kp LEFT>;
             label = "PAREN_LEFT";
         };
 
         bracket_left: bracket_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RBKT &kp BSLH &kp LEFT>;
+            bindings = <&kp JP_LBRC &kp JP_RBRC &kp LEFT>;
             label = "BRACKET_LEFT";
         };
     };
@@ -36,9 +37,9 @@
     behaviors {
         td_henkan: td_henkan {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAPDANCE_KANA";
+            label = "TAPDANCE_HENKAN";
             #binding-cells = <0>;
-            bindings = <&kp INT2>, <&kp INT4>;
+            bindings = <&kp JP_MHEN>, <&kp JP_HENK>;
 
             tapping-term-ms = <400>;
         };
@@ -65,7 +66,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "SEMICOLON_COLON";
             #binding-cells = <0>;
-            bindings = <&kp SQT>, <&kp LS(SQT)>;
+            bindings = <&kp JP_COLN>, <&kp JP_SCLN>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -73,7 +74,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "QUOTE_DQUOTE";
             #binding-cells = <0>;
-            bindings = <&kp N7>, <&kp LS(N7)>;
+            bindings = <&kp JP_QUOT>, <&kp JP_DQO>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -81,7 +82,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "EQUAL_PLUS";
             #binding-cells = <0>;
-            bindings = <&kp LS(MINUS)>, <&kp LS(SEMI)>;
+            bindings = <&kp JP_EQL>, <&kp JP_PLUS>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -89,7 +90,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MINUS_UNDERSCORE";
             #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp LS(INT1)>;
+            bindings = <&kp JP_MINS>, <&kp JP_UNDS>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -127,13 +128,13 @@
         default_layer {
             bindings = <
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-    &kp Q                &kp W                &kp E                &kp R                &kp T                                                               &kp Y                &kp U                &kp I                &kp O                &kp P
+    &kp JP_Q             &kp JP_W             &kp JP_E             &kp JP_R             &kp JP_T                                                            &kp JP_Y             &kp JP_U             &kp JP_I             &kp JP_O             &kp JP_P
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-    &kp A                &kp S                &kp D                &kp F                &kp G                &kp TAB                   &minus_underscore    &kp H                &kp J                &kp K                &kp L                &quote_dquote
+    &kp JP_A             &kp JP_S             &kp JP_D             &kp JP_F             &kp JP_G             &kp TAB                   &minus_underscore    &kp JP_H             &kp JP_J             &kp JP_K             &kp JP_L             &quote_dquote
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-    &kp Z                &kp X                &kp C                &kp V                &kp B                &td_esc_bt                &kp BACKSPACE        &kp N                &kp M                &kp COMMA            &kp DOT              &kp SLASH
+    &kp JP_Z             &kp JP_X             &kp JP_C             &kp JP_V             &kp JP_B             &td_esc_bt                &kp BACKSPACE        &kp JP_N             &kp JP_M             &kp JP_COMM          &kp JP_DOT           &kp JP_SLSH
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-    &ht_paren_ctrl LCTRL 0 &ht_bracket_os LGUI 0 &kp LEFT_ALT         &kp N0               &lt FN_SCROLL ENTER  &kp LCLK                  &lt_num_henkan NUM 0 &mt LSHIFT SPACE                                                                    &semicolon_colon
+    &ht_paren_ctrl LCTRL 0 &ht_bracket_os LGUI 0 &kp LEFT_ALT         &kp JP_0             &lt FN_SCROLL ENTER  &kp LCLK                  &lt_num_henkan NUM 0 &mt LSHIFT SPACE                                                                 &semicolon_colon
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
             >;
 
@@ -143,11 +144,11 @@
         NUM {
             bindings = <
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-    &kp N1               &kp N2               &kp N3               &kp N4               &kp N5                                                              &trans               &trans               &trans               &trans               &kp DEL
+    &kp JP_1             &kp JP_2             &kp JP_3             &kp JP_4             &kp JP_5                                                            &trans               &trans               &trans               &trans               &kp DEL
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-    &kp N6               &kp N7               &kp N8               &kp N9               &kp N0               &equal_plus               &trans               &kp LG(LEFT_ARROW)   &kp LG(DOWN_ARROW)   &kp LG(UP_ARROW)     &kp LG(RIGHT_ARROW)  &kp PAGE_UP
+    &kp JP_6             &kp JP_7             &kp JP_8             &kp JP_9             &kp JP_0             &equal_plus               &trans               &kp LG(LEFT_ARROW)   &kp LG(DOWN_ARROW)   &kp LG(UP_ARROW)     &kp LG(RIGHT_ARROW)  &kp PAGE_UP
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-    &trans               &trans               &trans               &trans               &trans               &kp LC(Z)                 &trans               &kp LA(LEFT_ARROW)   &kp LA(RIGHT_ARROW)  &trans               &trans               &kp PAGE_DOWN
+    &trans               &trans               &trans               &trans               &trans               &kp LC(JP_Z)              &trans               &kp LA(LEFT_ARROW)   &kp LA(RIGHT_ARROW)  &trans               &trans               &kp PAGE_DOWN
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
     &trans               &trans               &trans               &trans               &trans               &mkp RCLK                 &trans               &trans                                                                              &kp KP_NUMLOCK
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
@@ -159,13 +160,13 @@
         FN_SCROLL {
             bindings = <
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-    &kp F1               &kp F2               &kp F3               &kp F4               &kp F5                                                              &kp LS(N1)           &kp LS(N3)           &kp LS(N4)           &kp LS(N5)           &kp LS(N6)
+    &kp F1               &kp F2               &kp F3               &kp F4               &kp F5                                                              &kp JP_EXLM          &kp JP_HASH          &kp JP_DLR           &kp JP_PERC          &kp JP_AMPR
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-    &kp F6               &kp F7               &kp F8               &kp F9               &kp F10              &kp F11                   &kp LS(N7)           &kp LEFT_ARROW       &kp DOWN_ARROW       &kp UP_ARROW         &kp RIGHT_ARROW      &kp CARET
+    &kp F6               &kp F7               &kp F8               &kp F9               &kp F10              &kp F11                   &kp JP_QUOT          &kp LEFT_ARROW       &kp DOWN_ARROW       &kp UP_ARROW         &kp RIGHT_ARROW      &kp JP_CIRC
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-    &kp LC(Z)            &kp LC(X)            &kp LC(C)            &kp LC(V)            &trans               &kp F12                   &trans               &trans               &trans               &kp LS(SEMI)         &kp LS(INT3)         &kp LS(EQUAL)
+    &kp LC(JP_Z)         &kp LC(JP_X)         &kp LC(JP_C)         &kp LC(JP_V)         &trans               &kp F12                   &trans               &trans               &trans               &kp JP_PLUS          &kp JP_PIPE          &kp JP_TILD
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-    &trans               &trans               &trans               &trans               &trans               &mkp MCLK                 &kp LA(LEFT_ARROW)   &kp LA(RIGHT_ARROW)                                                                 &kp BSLH
+    &trans               &trans               &trans               &trans               &trans               &mkp MCLK                 &kp LA(LEFT_ARROW)   &kp LA(RIGHT_ARROW)                                                                 &kp JP_RBRC
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
             >;
 
@@ -179,7 +180,7 @@
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
     &trans               &trans               &trans               &trans               &trans               &trans                    &sys_reset           &trans               &trans               &trans               &trans               &trans
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-    &trans               &kp NUMBER_1         &kp NUMBER_2         &kp NUMBER_3         &trans               &trans                    &bootloader          &trans               &trans               &trans               &trans               &bt BT_CLR
+    &trans               &kp JP_1             &kp JP_2             &kp JP_3             &trans               &trans                    &bootloader          &trans               &trans               &trans               &trans               &bt BT_CLR
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
     &bootloader          &sys_reset           &trans               &trans               &trans               &trans                    &trans               &trans                                                                             &bt BT_CLR_ALL
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
