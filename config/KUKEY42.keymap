@@ -41,7 +41,7 @@
             #binding-cells = <0>;
             bindings = <&kp JP_MHEN>, <&kp JP_HENK>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_esc_bt: td_esc_bt {
@@ -50,7 +50,7 @@
             #binding-cells = <0>;
             bindings = <&kp ESCAPE>, <&sl BT>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_paren: td_paren {
@@ -59,7 +59,7 @@
             #binding-cells = <0>;
             bindings = <&kp JP_LPRN>, <&kp JP_RPRN>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_bracket: td_bracket {
@@ -68,7 +68,7 @@
             #binding-cells = <0>;
             bindings = <&kp JP_LBRC>, <&kp JP_RBRC>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         lt_num_henkan: lt_num_henkan {
