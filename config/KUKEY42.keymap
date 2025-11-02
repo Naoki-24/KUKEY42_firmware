@@ -74,7 +74,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "QUOTE_DQUOTE";
             #binding-cells = <0>;
-            bindings = <&kp JP_QUOT>, <&kp JP_DQO>;
+            bindings = <&kp JP_QUOT>, <&kp JP_DQUO>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
