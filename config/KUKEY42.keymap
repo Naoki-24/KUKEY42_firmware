@@ -65,7 +65,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "SEMICOLON_COLON";
             #binding-cells = <0>;
-            bindings = <&kp QUOTE>, <&kp LS(QUOTE)>;
+            bindings = <&kp SQT>, <&kp LS(SQT)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -81,7 +81,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "EQUAL_PLUS";
             #binding-cells = <0>;
-            bindings = <&kp LS(MINUS)>, <&kp LS(SEMICOLON)>;
+            bindings = <&kp LS(MINUS)>, <&kp LS(SEMI)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -89,7 +89,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "MINUS_UNDERSCORE";
             #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp LS(INTERNATIONAL_1)>;
+            bindings = <&kp MINUS>, <&kp LS(INT1)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -163,7 +163,7 @@
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
     &kp F6               &kp F7               &kp F8               &kp F9               &kp F10              &kp F11                   &kp LS(N7)           &kp LEFT_ARROW       &kp DOWN_ARROW       &kp UP_ARROW         &kp RIGHT_ARROW      &kp CARET
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-    &kp LC(Z)            &kp LC(X)            &kp LC(C)            &kp LC(V)            &trans               &kp F12                   &trans               &trans               &trans               &kp LS(COLON)        &kp LS(INT3)         &kp LS(EQUAL)
+    &kp LC(Z)            &kp LC(X)            &kp LC(C)            &kp LC(V)            &trans               &kp F12                   &trans               &trans               &trans               &kp LS(SEMI)         &kp LS(INT3)         &kp LS(EQUAL)
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
     &trans               &trans               &trans               &trans               &trans               &mkp MCLK                 &kp LA(LEFT_ARROW)   &kp LA(RIGHT_ARROW)                                                                 &kp BSLH
 // +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+    +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
